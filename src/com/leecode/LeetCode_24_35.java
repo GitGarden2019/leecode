@@ -1,8 +1,8 @@
 package com.leecode;
 
 /**
- * 合并两个有序列表
- * https://leetcode-cn.com/problems/merge-two-sorted-lists/
+ * 交换两个相邻节点
+ * https://leetcode-cn.com/problems/swap-nodes-in-pairs/
  */
 public class LeetCode_24_35 {
 
@@ -47,22 +47,56 @@ public class LeetCode_24_35 {
     public static void main(String[] args) {
         LeetCode_24_35 lc=new LeetCode_24_35();
 
-        int[] l1Arr=new int[]{2};
-        ListNode l1=lc.build(l1Arr);
+        ListNode l0= lc.swapPairs(lc.build(new int[]{1,2,3,4}));
+        lc.print(l0);
 
+        ListNode l1= lc.swapPairs(lc.build(new int[]{1,2,3,4,5,6,7,8,9}));
         lc.print(l1);
-
-        int[] l2Arr=new int[]{1};
-
-        ListNode l2=lc.build(l2Arr);
-        lc.print(l2);
-
-
+        ListNode l3= lc.swapPairs(lc.build(new int[]{1,2}));
+        lc.print(l3);
 
     }
 
     public ListNode swapPairs(ListNode head) {
-        return  null;
+
+
+        ListNode dummpy=new ListNode(Integer.MIN_VALUE);
+
+        dummpy.next=head;
+
+        //指针每次偏移两位，每次进行交换指针,注意边界值的判断
+        if(dummpy.next==null||dummpy.next.next==null){
+            return head;
+        }
+
+        ListNode curNode0=dummpy;
+        ListNode curNode1=curNode0.next;
+        ListNode curNode2=curNode1.next;
+
+
+        if(curNode2.next==null){ //只有两个元素的情况,直接交换
+            curNode1.next=curNode2.next;
+            curNode0.next= curNode2;
+            curNode2.next=curNode1;
+            return dummpy.next;
+        }
+
+        int moveFlag=0;
+        while(curNode0!=null&&curNode0.next!=null&&curNode0.next.next!=null){
+
+            if(moveFlag%2==0){
+                curNode1.next=curNode2.next;
+                curNode0.next= curNode2;
+                curNode2.next=curNode1;
+            }
+
+            curNode0=curNode0.next;//第一个指针往后移动一个
+            curNode1=curNode0.next;
+            curNode2=curNode1.next;
+            moveFlag++;
+
+        }
+        return  dummpy.next;
     }
 
 
