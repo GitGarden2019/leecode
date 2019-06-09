@@ -13,13 +13,13 @@ import java.util.Arrays;
  * rotate 3 steps to the right: [5,6,7,1,2,3,4]
  *
  */
-public class LeetCode_189_35 {
+public class Leetcode_189_35 {
     public static void main(String[] args) {
 
         //考虑先移动一次的情况
         int nums[]={1,2,3,4,5};
 
-        LeetCode_189_35 p189=new LeetCode_189_35();
+        Leetcode_189_35 p189=new Leetcode_189_35();
         p189.rotate(nums,3);
         //p189.moveOnece(nums);
 

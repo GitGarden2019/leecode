@@ -4,7 +4,7 @@ package com.leecode;
  * 交换两个相邻节点
  * https://leetcode-cn.com/problems/swap-nodes-in-pairs/
  */
-public class LeetCode_24_35 {
+public class Leetcode_24_35 {
 
     public void insert(ListNode ls,int val){
         ListNode tNode=ls;
@@ -45,7 +45,7 @@ public class LeetCode_24_35 {
     }
 
     public static void main(String[] args) {
-        LeetCode_24_35 lc=new LeetCode_24_35();
+        Leetcode_24_35 lc=new Leetcode_24_35();
 
         ListNode l0= lc.swapPairs(lc.build(new int[]{1,2,3,4}));
         lc.print(l0);

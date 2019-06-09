@@ -1,12 +1,10 @@
 package com.leecode;
 
-import java.util.Arrays;
-
 /**
  * 合并两个有序列表
  * https://leetcode-cn.com/problems/merge-two-sorted-lists/
  */
-public class LeetCode_21_35 {
+public class Leetcode_21_35 {
 
     public void insert(ListNode ls,int val){
         ListNode tNode=ls;
@@ -47,7 +45,7 @@ public class LeetCode_21_35 {
     }
 
     public static void main(String[] args) {
-        LeetCode_21_35 lc=new LeetCode_21_35();
+        Leetcode_21_35 lc=new Leetcode_21_35();
 
         int[] l1Arr=new int[]{2};
         ListNode l1=lc.build(l1Arr);
