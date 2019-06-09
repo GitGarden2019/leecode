@@ -29,12 +29,25 @@ public class Leetcode_191_35 {
     }
 
 
+    public int hammingWeight(int n) {
+
+        int count=0;
+        while (n!=0){
+            count++;
+            //每次回消掉一个1
+            n&=n-1;//it switch bit 1 to 0 of first right most bit e.x.: 01100 => 01000
+
+        }
+        return count;
+    }
+
+
     /**
      * 查看二进制位的第一位，不断右移，直到数据变成0为止
      * @param n
      * @return
      */
-    public int hammingWeight(int n) {
+    public int hammingWeight_v1(int n) {
         int x=0b10000000000000000000000000000000;
 
         int count=0;
