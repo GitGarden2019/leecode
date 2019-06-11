@@ -1,6 +1,4 @@
-package com.leecode;
-
-import java.util.*;
+package com.leecode.week01;
 
 /**
  * 191. Number of 1 Bits

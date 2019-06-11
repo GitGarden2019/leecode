@@ -1,4 +1,4 @@
-package com.leecode;
+package com.leecode.week01;
 
 import java.util.ArrayList;
 import java.util.Arrays;

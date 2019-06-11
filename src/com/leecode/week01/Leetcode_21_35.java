@@ -1,4 +1,6 @@
-package com.leecode;
+package com.leecode.week01;
+
+import com.leecode.ListNode;
 
 /**
  * 合并两个有序列表
@@ -6,7 +8,7 @@ package com.leecode;
  */
 public class Leetcode_21_35 {
 
-    public void insert(ListNode ls,int val){
+    public void insert(ListNode ls, int val){
         ListNode tNode=ls;
         while (tNode.next!=null){
             tNode=tNode.next;

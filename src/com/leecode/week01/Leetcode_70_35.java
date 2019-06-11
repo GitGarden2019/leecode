@@ -1,6 +1,5 @@
-package com.leecode;
+package com.leecode.week01;
 
-import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 

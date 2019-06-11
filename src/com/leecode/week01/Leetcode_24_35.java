@@ -1,4 +1,6 @@
-package com.leecode;
+package com.leecode.week01;
+
+import com.leecode.ListNode;
 
 /**
  * 交换两个相邻节点
@@ -6,7 +8,7 @@ package com.leecode;
  */
 public class Leetcode_24_35 {
 
-    public void insert(ListNode ls,int val){
+    public void insert(ListNode ls, int val){
         ListNode tNode=ls;
         while (tNode.next!=null){
             tNode=tNode.next;
