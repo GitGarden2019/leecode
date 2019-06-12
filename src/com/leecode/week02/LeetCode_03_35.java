@@ -12,20 +12,6 @@ import java.util.Set;
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
  */
 public class LeetCode_03_35 {
-    public static void main(String[] args) {
-        LeetCode_03_35 lc=new LeetCode_03_35();
-       System.out.println(lc.lengthOfLongestSubstring("abc         abcbb"));
-        System.out.println(lc.lengthOfLongestSubstring("bb  bbb"));
-        System.out.println(lc.lengthOfLongestSubstring(" "));
-        System.out.println(lc.lengthOfLongestSubstring("au"));
-
-        //1.给定一个字符串，先输出看子串都有哪些
-        //暴力枚举
-        //lc.printAllSubstring("abcabcbb");
-
-
-    }
-
     public void printAllSubstring(String s){
         char[] chs=s.toCharArray();
         for(int i=0;i<s.length();i++){
@@ -34,6 +20,23 @@ public class LeetCode_03_35 {
             }
         }
     }
+    public static void main(String[] args) {
+        LeetCode_03_35 lc=new LeetCode_03_35();
+        System.out.println(lc.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(lc.lengthOfLongestSubstring("abc         abcbb"));
+        System.out.println(lc.lengthOfLongestSubstring("bb  bbb"));
+        System.out.println(lc.lengthOfLongestSubstring(" "));
+        System.out.println(lc.lengthOfLongestSubstring("au"));
+        System.out.println(lc.lengthOfLongestSubstring("abcabcbb"));
+
+        //1.给定一个字符串，先输出看子串都有哪些
+        //暴力枚举
+        //lc.printAllSubstring("abcabcbb");
+
+
+    }
+
+
 
     public int lengthOfLongestSubstring(String s) {
         if(s.isEmpty()){
@@ -46,17 +49,24 @@ public class LeetCode_03_35 {
 
         int longest=0;
 
+        char[] chs=s.toCharArray();
+        Set<Character> set=new HashSet<>();
         for(int i=0;i<s.length();i++){
-            for(int j=i+1;j<=s.length();j++){
-                if(longest<j-i){    //太短的子串，也不用去看了
-                    String sub=s.substring(i,j);
-                    if(!hasRepeatingChar(sub)){
-                        longest=sub.length();
-                    }
+            set.add(chs[i]);
+            int subLen=1;
+            for(int j=i+1;j<s.length();j++){
+
+                if(set.contains(chs[j])){ //有重复字符,则循环终止
+                    set.clear();
+                    break;
+                }else{
+                    set.add(chs[j]);
                 }
-
+                subLen++;
             }
+            longest=Math.max(longest,subLen);
 
+            set.clear();
 
         }
         return longest;
