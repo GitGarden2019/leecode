@@ -28,17 +28,17 @@ public class LeetCode_03_35 {
         System.out.println(lc.lengthOfLongestSubstring(" "));
         System.out.println(lc.lengthOfLongestSubstring("au"));
         System.out.println(lc.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(lc.lengthOfLongestSubstring("abbbcd"));
 
         //1.给定一个字符串，先输出看子串都有哪些
         //暴力枚举
-        //lc.printAllSubstring("abcabcbb");
+        lc.printAllSubstring("abcabcbb");
 
 
     }
 
 
-
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring(String s){
         if(s.isEmpty()){
             return 0;
         }
@@ -72,7 +72,42 @@ public class LeetCode_03_35 {
         return longest;
     }
 
-    Map<String, Boolean> cache=new HashMap<>();
+
+    public int lengthOfLongestSubstring_v1(String s) {
+        if(s.isEmpty()){
+            return 0;
+        }
+
+        if(s.length()==1){
+            return 1;
+        }
+
+        int longest=0;
+
+        char[] chs=s.toCharArray();
+        Set<Character> set=new HashSet<>();
+        for(int i=0;i<s.length();i++){
+            set.add(chs[i]);
+            int subLen=1;
+            for(int j=i+1;j<s.length();j++){
+
+                if(set.contains(chs[j])){ //有重复字符,则循环终止
+                    set.clear();
+                    break;
+                }else{
+                    set.add(chs[j]);
+                }
+                subLen++;
+            }
+            longest=Math.max(longest,subLen);
+
+            set.clear();
+
+        }
+        return longest;
+    }
+
+    /*Map<String, Boolean> cache=new HashMap<>();
     public boolean hasRepeatingChar(String s){
 
         if(cache.containsKey(s)){
@@ -92,5 +127,5 @@ public class LeetCode_03_35 {
         }
         cache.put(s,false);
         return false;
-    }
+    }*/
 }
