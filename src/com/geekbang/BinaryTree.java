@@ -132,7 +132,6 @@ public class BinaryTree {
         if(node!=null){
             queue.offer(node);
         }
-
         while (!queue.isEmpty()){
             TreeNode curNode=queue.poll();
             System.out.print(curNode.val +" ");

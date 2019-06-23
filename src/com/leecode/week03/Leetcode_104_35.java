@@ -15,7 +15,7 @@ public class Leetcode_104_35 {
        // int[] arr={3,2};
         TreeNode treeNode=TreeNode.createBinaryV1(arr,arr.length);
        int maxDept= lc.maxDepth(treeNode);
-        System.out.println("maxDept->"+maxDept);
+       System.out.println("maxDept->"+maxDept);
     }
 
 
@@ -27,4 +27,6 @@ public class Leetcode_104_35 {
     public int maxDepth(TreeNode root) {
         return root == null ? 0 : (1 + Math.max(maxDepth(root.left), maxDepth(root.right)));
     }
+
+
 }

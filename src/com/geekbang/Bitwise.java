@@ -9,12 +9,29 @@ import java.util.Map;
  */
 public class Bitwise {
     public static void main(String[] args) {
+        int n=0b10000000000000000000000000000001;
+        System.out.println(n);
+        System.out.println(toFullBinaryString(n));
+         /*int n=0b11111111111111111111111111111111;
+         System.out.println(n);*/
+         //System.out.println(n>>1);
         //and();
         //xor();
         //inverse();
-        //moveLeft();
+       // moveLeft();
         //moveRight();
-        group();
+       // group();
+    }
+
+    public static String toFullBinaryString(int num)//将整数num转化为32位的二进制数
+    {
+        char[] chs = new char[Integer.SIZE];
+        for (int i = 0; i < Integer.SIZE; i++)
+        {
+            chs[Integer.SIZE - 1 - i] = (char) (((num >> i) & 1) + '0');
+            //System.out.print(chs[Integer.SIZE - 1 - i]);
+        }
+        return new String(chs);
     }
 
     //人群操作尝试
