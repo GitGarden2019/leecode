@@ -1,9 +1,11 @@
 package com.leecode;
 
-public class ListNode{
+public class ListNode {
+
     public int val;
     public ListNode next;
-    public ListNode(int x){
-        val=x;
+
+    public ListNode(int x) {
+        val = x;
     }
 }
