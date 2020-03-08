@@ -35,7 +35,6 @@ public class Leetcode_190_35 {
         char[] chs = new char[Integer.SIZE];
         for (int i = 0; i < Integer.SIZE; i++) {
             chs[Integer.SIZE - 1 - i] = (char) (((num >> i) & 1) + '0');
-            //System.out.print(chs[Integer.SIZE - 1 - i]);
         }
         return new String(chs);
     }
