@@ -30,12 +30,9 @@ public class Leetcode_15_35 {
         List<List<Integer>> finalList = new ArrayList<>();
         Map<Integer, int[]> resHash = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-
             for (int j = i + 1; j < nums.length; j++) {
-
                 //如果剩下的元素在后面可以拿到,则这就是一组合法值
                 int other = 0 - nums[i] - nums[j];
-
                 int[] arr = resHash.get(nums[j]);
                 if (arr != null) {
                     //强匹配
